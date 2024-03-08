@@ -1,1 +1,1 @@
-I'm studing aboute API Rest
+I'm studing about API Rest
