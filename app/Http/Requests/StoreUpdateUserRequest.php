@@ -21,7 +21,7 @@ class StoreUpdateUserRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'name' => 'required|min:3|max:255',
             'email'=> [
                 'required',
@@ -34,7 +34,23 @@ class StoreUpdateUserRequest extends FormRequest
                     'min:6',
                     'max:100',
                     
-                ]
+                ],
         ];
+        
+        if($this->method()=== 'PATCH')
+        {
+            $rules['email'] = [
+                'required',
+                'email',
+                'max:255',
+                "unique:users, email, {$this->id}, id"
+                ];
+            $rules['password'] = [
+                'nulllable',
+                'min:6',
+                'max:100',
+            ];
+        }
+        return $rules;
     }
 }
