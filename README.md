@@ -35,7 +35,6 @@ GET /api/users/{id} - Obter um usuário específico
 POST /api/users - Criar um novo usuário
 PUT /api/users/{id} - Atualizar um usuário existente
 DELETE /api/users/{id} - Excluir um usuário
-Para mais detalhes sobre cada rota, consulte a documentação gerada pelo Laravel em http://localhost:8000/api/documentation.
 
 Testes
 Para executar os testes, use o comando:
