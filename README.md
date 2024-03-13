@@ -45,7 +45,7 @@ Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 Contato
-Para contato, envie um email para odanilosouza@gmail.com ou acesse meu perfil no LinkedIn.
+Para contato, envie um email para odanilosouza@gmail.com ou acesse meu perfil no [LinkedIn]([url](https://www.linkedin.com/in/danilolimadesouza/)https://www.linkedin.com/in/danilolimadesouza/).
 
 
 
