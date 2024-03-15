@@ -7,6 +7,7 @@ use App\Http\Requests\StoreUpdateUserRequest;
 use App\Models\User;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
@@ -42,14 +43,24 @@ class UserController extends Controller
         return new UserResource($user);
     }
 
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateUserRequest $request, string $id)
     {
         $user = User::findOrFail($id);
 
         $data = $request->all();
-        $data['password'] = bcrypt($request->password);
+
+        if($request->password)
+            $data['password'] = bcrypt($request->password);
+
         $user->update($data);
 
         return new UserResource($user);
+    }
+
+    public function destroy(string $id)
+    {
+        $user = User::findOrFail($id)->delete();
+
+        return response()->json([], Response::HTTP_NO_CONTENT);
     }
 }
